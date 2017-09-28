@@ -1,0 +1,19 @@
+<div class="container"><br/>
+    <div id="lineDrawing">
+        <div class="small circle el follow-path"></div>
+        <svg width="510px" height="174px" viewBox="0 0 510 174"
+             xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <image xlink:href="assets/images/zone_defense.png" x="0" y="0" height="174px" width="510px"></image>
+            <g ng-repeat="n in positions track by $index">
+                <circle cx="{{n.cx}}" cy="{{n.cy}}" r="10" stroke="black"
+                        stroke-width="2" fill="{{n.color}}" id="{{n.position}}">
+                </circle>
+                <text x="{{(n.cx - 4)}}" y="{{(n.cy+4)}}" fill="white">{{getPlayerNum(n.position)}}</text>
+                <text x="{{(n.cx - 4)}}" y="{{(n.cy+20)}}" fill="black">{{getPlayerName(n.position)}}</text>
+            </g>
+            <g class="lines" fill="none" stroke="blue" stroke-width="1">
+                <path class="SamplePath" d="{{path}}"></path>
+            </g>
+        </svg>
+    </div>
+</div>
